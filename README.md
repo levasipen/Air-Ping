@@ -1,4 +1,4 @@
-# Parallel Traffic Stress Tool
+# Air-Ping
 
 **Disclaimer**:  
 This script is intended strictly for **educational use** and **authorized network stress testing** only.  
@@ -7,19 +7,19 @@ Unauthorized use is illegal and unethical.
 
 ---
 
-## 🔧 Features
+## 📦 Features
 
-- Interactive TCP/UDP flood configuration via `hping3`
-- Parallel execution using GNU `parallel`
-- Optional ARP request blocking for LAN stealth
+- Interactive TCP/UDP flood configuration
+- Parallel execution
+- ARP request blocking for LAN stealth
 - Timed execution with auto-shutdown
 - Fully compatible with Linux environments
 
 ---
 
-## 📦 Requirements
+## 🛠️ Requirements
 
-Run the included `setup.sh` script to automatically install all required packages:
+Run the included 'setup.sh' script to automatically install all required packages:
 
 chmod +x setup.sh
 ./setup.sh
