@@ -19,7 +19,7 @@ Unauthorized use is illegal and unethical.
 
 ## 📦 Requirements
 
-Run the included `setup.sh` script to automatically install all required packages:
+Run the included 'setup.sh' script to automatically install all required packages:
 
 chmod +x setup.sh
 ./setup.sh
