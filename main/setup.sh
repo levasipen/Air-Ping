@@ -1,12 +1,8 @@
-#!/bin/bash
 clear
 
-echo "==== Parallel Traffic Stress Tool Setup ===="
+echo "==== Air-Ping Stress Tool Setup ===="
 echo ""
 echo "This script will install required dependencies:"
-echo "- hping3"
-echo "- ebtables"
-echo "- parallel"
 echo ""
 
 read -p "What type of system are you using? [D]ebian/Ubuntu-based | [F]edora/RHEL/CentOS | [O]ther: " os
@@ -14,21 +10,21 @@ os=$(echo "$os" | tr '[:upper:]' '[:lower:]')
 
 install_debian() {
     sudo apt update
-    sudo apt install -y hping3 ebtables parallel
-	chmod +x NetStorm.sh
+    sudo apt install -y hping3 nftables parallel
+	chmod +x Air-Ping.sh
 }
 
 install_fedora() {
     if command -v dnf &>/dev/null; then
         echo "[*] Using dnf..."
         sudo dnf update -y
-        sudo dnf install -y hping3 ebtables parallel
-		chmod +x NetStorm.sh
+        sudo dnf install -y hping3 nftables parallel
+		chmod +x Air-Ping.sh
     elif command -v yum &>/dev/null; then
         echo "[*] Using yum..."
         sudo yum update -y
-        sudo yum install -y hping3 ebtables parallel
-		chmod +x NetStorm.sh
+        sudo yum install -y hping3 nftables parallel
+		chmod +x Air-Ping.sh
     else
         echo "[!] Neither dnf nor yum found. Cannot continue."
         exit 1
@@ -39,7 +35,7 @@ install_other() {
     echo "[!] Unsupported system for automatic install."
     echo "Please install manually using your system's package manager:"
     echo "- hping3"
-    echo "- ebtables"
+    echo "- nftables"
     echo "- parallel"
 }
 
